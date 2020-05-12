@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Product from './Product';
+import StationaryProducts from './StationaryProducts';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// function App() {
+//   const sProdComponents = StationaryProducts.map((prod) => (
+//     <Product key={prod.id} name={prod.name} price={prod.price} desc={prod.desc}/>
+//   ));
+//   return (
+//     <div className="App">
+//       <h1><em>G’sProduct List:</em> All soon to be in stock!</h1>
+//         {sProdComponents}
+//     </div>
+//   );
+// }
+
+class App extends React.Component {
+  render() {
+    const sProdComponents = StationaryProducts.map((prod) => (
+      <Product key={prod.id} name={prod.name} price={prod.price} desc={prod.desc}/>
+    ));
+    return (
+      <div className="App">
+      <h1><em>G’sProduct List:</em> All soon to be in stock!</h1>
+        {sProdComponents}
     </div>
-  );
-}
+    );
+  }}
+
 
 export default App;
